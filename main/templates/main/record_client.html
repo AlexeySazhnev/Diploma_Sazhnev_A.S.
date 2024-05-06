@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-md-5">
+    <div class="container-fluid">
+        <div class="row text-white lh-2 p-5">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Отправить">
+                <h2 class="row text-white lh-3 p-5">{{ message }}</h2>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

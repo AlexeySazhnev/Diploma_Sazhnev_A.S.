@@ -1,0 +1,20 @@
+.c-fon {
+    background-image: url('/static/images/fon_carusel.jpg');
+
+}
+
+.c-item {
+    height: 700px;
+}
+
+.c-img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.content-text {
+    color: aliceblue;
+    padding-left: 50px;
+    padding-top: 100px;
+    font-size: 100%;
+}

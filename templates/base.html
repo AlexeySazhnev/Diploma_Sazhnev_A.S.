@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Парикмахерская "Style"{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- Панель навигации -->
+        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Парикмахерская Style</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">На главную</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/record/">Запись на наши услуги</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Контакты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/">Страница администрации</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Блок карусель -->
+
+    <div class="bg-image c-fon">
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active c-item">
+                    <img src="{% static 'images\narashivanie.jpg' %}" class="d-block w-100 c-img">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Наращивание волос.</h5>
+                    </div>
+                </div>
+                <div class="carousel-item c-item">
+                    <img src="{% static 'images\hairstyle_for_women.jpg' %}" class="d-block w-100 c-img">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Причёска (женская).</h5>
+                    </div>
+                </div>
+                <div class="carousel-item c-item">
+                    <img src="{% static 'images\hairstyle_for_men.jpg' %}" class="d-block w-100 c-img">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Причёска (мужская)</h5>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Контент -->
+
+        <div class="bg-image" style="background-image: url('/static/images/fon.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 130vh;">
+            <h1 class="fst-italic" style="color: rgb(114, 231, 229); text-align: center">Добро пожаловать в наш
+                салон
+                "Style"</h1>
+            {% block content %}
+            <div class="col-md-6">
+                <div class="content-text">
+                    Устали от однообразных причесок и хотите попробовать что-то новое? Наш профессиональный стилист,
+                    поможет вам создать уникальный образ, подчеркнуть вашу индивидуальность и преобразить внешний
+                    вид.
+
+                    Мы работаем с самыми качественными материалами и используем только современные технологии, чтобы
+                    достичь
+                    идеального
+                    результата. У нас вы сможете сделать стрижку, окрашивание, укладку и многое другое.
+
+                    Приходите к нам и насладитесь моментом красоты и ухода за собой! Запишитесь на прием прямо
+                    сейчас и
+                    станьте
+                    звездой
+                    салона красоты "Style"!"
+                </div>
+                <h2 class="row text-white lh-3 p-5">{{ message }}</h2>
+            </div>
+            {% endblock %}
+        </div>
+
+
+
+        <!-- Подвал -->
+        <div class="container-fluid">
+            <div class="row bg-secondary text-center text-black lh-1">
+                <div class="footer">
+                    <h5 id="contact">Наши контакты</h5>
+                    <dl>
+                        <dt>адрес :</dt>
+                        <dd>г.Москва, ул.Московская, д.186</dd>
+                        <dt>телефон :</dt>
+                        <dd>123-456-7890</dd>
+                        <dt>Email :</dt>
+                        <dd>info@hairsalon.com</dd>
+                    </dl>
+                    <p>&copy; 2024 Наш парикмахерский салон "Style". Все права защищены.</p>
+                </div>
+
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
